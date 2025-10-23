@@ -1,0 +1,72 @@
+backend/
+│
+├── server.js                # Entry point (start your Express server)
+│
+├── config/
+│   └── db.js                # MongoDB connection setup
+│
+├── models/
+│   ├── userModel.js         # User schema (customer/seller)
+│   ├── productModel.js      # Product schema
+│   └── cartModel.js         # Cart schema
+│
+├── routes/
+│   ├── authRoutes.js        # Signup/Login/Logout
+│   ├── productRoutes.js     # For customers (get/search products)
+│   ├── sellerRoutes.js      # Seller add/edit/delete products
+│   └── cartRoutes.js        # Customer cart operations
+│
+├── controllers/
+│   ├── authController.js
+│   ├── productController.js
+│   ├── sellerController.js
+│   └── cartController.js
+│
+├── middleware/
+│   ├── authMiddleware.js    # Verify JWT and attach user info
+│   └── roleMiddleware.js    # Restrict routes (e.g., seller only)
+│
+├── .env                     # Store secrets (DB_URL, JWT_SECRET)
+├── package.json
+└── node_modules/
+
+
+
+
+
+
+
+
+
+frontend/
+│
+├── src/
+│   ├── App.jsx              # Main app component
+│   ├── main.jsx             # Entry point for ReactDOM
+│
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── ProtectedRoute.jsx
+│
+│   ├── pages/
+│   │   ├── Home.jsx              # Show all products
+│   │   ├── Login.jsx
+│   │   ├── Signup.jsx
+│   │   ├── Cart.jsx
+│   │   ├── SellerDashboard.jsx   # Seller adds/edits/deletes products
+│   │   └── NotFound.jsx
+│
+│   ├── utils/
+│   │   ├── api.js           # Axios baseURL setup
+│   │   └── auth.js          # Handle token in localStorage
+│
+│   ├── context/
+│   │   └── AuthContext.jsx  # Manage login state globally
+│
+│   └── index.css            # Tailwind + custom styles
+│
+├── vite.config.js
+├── package.json
+└── node_modules/

@@ -1,0 +1,37 @@
+ecommerce/
+│
+├── backend/
+│   ├── server.js / app.js
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── controllers/
+│   └── .env
+│
+└── frontend/
+    ├── index.html
+    ├── vite.config.js
+    ├── package.json
+    ├── tailwind.config.js
+    └── src/
+        ├── main.jsx
+        ├── App.jsx
+        ├── assets/
+        ├── components/
+        │   ├── Navbar.jsx
+        │   ├── ProductCard.jsx
+        │   ├── Footer.jsx
+        │   └── etc...
+        ├── pages/
+        │   ├── Home.jsx
+        │   ├── Login.jsx
+        │   ├── Signup.jsx
+        │   ├── SellerDashboard.jsx
+        │   ├── ProductDetails.jsx
+        │   └── Cart.jsx
+        ├── context/
+        │   └── AuthContext.jsx
+        ├── hooks/
+        ├── utils/
+        └── services/
+            └── api.js   ← central Axios instance
