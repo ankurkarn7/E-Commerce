@@ -13,7 +13,7 @@ const verify = async (req, res, next) => {
         req.role = decoded.role;
         next();
     }catch(err){
-        res.status(500).json({message : "Invalid or expired token"});
+        return res.status(500).json({message : "Invalid or expired token"});
     }
 }
 

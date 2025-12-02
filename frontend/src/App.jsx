@@ -10,6 +10,11 @@ import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
 import AddProduct from './pages/AddProduct';
 import EditProduct from './pages/EditProduct';
+import UserOrders from './pages/UserOrders';
+import SellerOrders from './pages/SellerOrders';
+import PendingSellerOrders from './pages/PendingSellerOrders';
+import AcceptedSellerOrders from './pages/AcceptedSellerOrders';
+import CancelledSellerOrders from './pages/CancelledSellerOrders';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +26,11 @@ const router = createBrowserRouter([
       {path: '/cart', element: <Cart />},
       {path: '/addProduct', element: <AddProduct />},
       {path: '/editProduct', element: <EditProduct />},
+      {path: '/userOrders', element: <UserOrders />},
+      {path: '/orders', element: <SellerOrders/>},
+      {path: '/pendingOrders', element: <PendingSellerOrders />},
+      {path: '/acceptedOrders', element: <AcceptedSellerOrders />},
+      {path: '/cancelledOrders', element: <CancelledSellerOrders />},
       {path: '*', element: <NotFound />},
     ]
   }

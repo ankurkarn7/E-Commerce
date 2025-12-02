@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
       <div className='flex flex-row items-center justify-center gap-5'>
-        <h1 className="text-xl font-bold">Market Place</h1>
+        <Link to='/' className="text-xl font-bold">Market Place</Link>
         {user?.role === 'seller' && <p className='text-xl bg-yellow-600 px-3 rounded'>Seller</p>}
       </div>
       <div className="space-x-4">

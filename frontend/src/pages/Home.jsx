@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from '../services/api'
 import ProductCard from "../components/ProductCard";
+import MenuBox from "../components/MenuBox";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +34,12 @@ const Home = () => {
 
   return (
     <div className="p-6">
-      <p className="text-3xl underline text-center">Available Products</p>
+      <div className="relative flex items-center w-full">
+        <p className="text-3xl underline absolute left-1/2 -translate-x-1/2">Available Products</p>
+        <div className="absolute right-10">
+          <MenuBox />
+        </div>
+      </div>
       <form onSubmit={handleSearch} className="flex gap-2 my-6">
         <input
           type="text"

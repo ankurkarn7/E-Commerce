@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const cors = require('cors');
 app.use(cors({
-  origin: "http://localhost:5173", // or your frontend port
+  origin: "http://localhost:5173",
   credentials: true
 }));
 
@@ -23,6 +23,9 @@ app.use('/cart', cartRoutes);
 
 const productRoutes = require('./routes/productRoutes');
 app.use('/product', productRoutes);
+
+const orderRoutes = require('./routes/orderRoutes');
+app.use('/order/', orderRoutes);
 
 app.get('/', (req, res)=>{
     res.send("hello ankur karn, you can start building e commerce website now.");

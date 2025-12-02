@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import api from '../services/api';
 import ProductCardSeller from '../components/ProductCardSeller';
+import { Menu } from '@headlessui/react'
+import MenuBox from '../components/MenuBox';
 
 const HomeSeller = () => {
 
@@ -30,6 +32,9 @@ const HomeSeller = () => {
         <div className='sticky top-0 w-full flex justify-center items-center p-5 z-10 bg-pink-100 shadow'>
             <h1 className='font-bold text-2xl underline'>Your Products</h1>
             <Link to='/addProduct' className='absolute right-5 bg-blue-500 w-32 text-center rounded-lg text-white p-1 hover:bg-blue-600' >Add product</Link>
+            <div className='absolute right-44'>
+                <MenuBox />
+            </div>
         </div>
         <div className='m-8'>
             {products.length > 0 ? (
