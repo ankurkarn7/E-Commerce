@@ -31,4 +31,6 @@ app.get('/', (req, res)=>{
     res.send("hello ankur karn, you can start building e commerce website now.");
 })
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server running");
+});
