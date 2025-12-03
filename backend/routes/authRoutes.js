@@ -29,7 +29,12 @@ router.post('/login', async (req, res)=>{
         bcrypt.compare(password, user.password, (err, result)=>{
             if(result){
                 let token = jwt.sign({email, role:user.role, id:user._id}, process.env.JWT_SECRET);
-                res.cookie("token", token);
+                res.cookie("token", token, {
+                    httpOnly: true,
+                    secure: true,
+                    sameSite: "none",
+                    path: "/",  
+                });
                 return res.json({
                     message : `Welcome ${user.name}`,
                     user : {            // used in useContext for removing login and signup button after successful login
@@ -47,7 +52,13 @@ router.post('/login', async (req, res)=>{
 })
 
 router.post('/logout', (req, res)=>{
-    res.clearCookie('token');
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        path: "/"
+    });
+
     res.send("Logged out successfully");
 })
 
