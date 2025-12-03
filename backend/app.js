@@ -8,7 +8,10 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const cors = require('cors');
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",               // local frontend
+    "https://ecommerce-ankur.vercel.app"  // deployed frontend
+  ],
   credentials: true
 }));
 
