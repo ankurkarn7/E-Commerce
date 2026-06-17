@@ -7,11 +7,17 @@ connectDB();
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const cors = require('cors');
+const allowedOrigins = [
+  "https://ecommerce-ankur.vercel.app"  // deployed frontend
+];
 app.use(cors({
-  origin: [
-    "http://localhost:5173",               // local frontend
-    "https://ecommerce-ankur.vercel.app"  // deployed frontend
-  ],
+  origin: (origin, callback) => {
+    // allow non-browser tools (no origin) and any localhost port during dev
+    if (!origin || /^http:\/\/localhost:\d+$/.test(origin) || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
   credentials: true
 }));
 
